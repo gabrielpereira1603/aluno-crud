@@ -1,0 +1,98 @@
+<div class="content">
+  <div class="title">
+    <div>
+      <h1>Cadastro de Disciplinas</h1>
+      <small>Cadastre as suas disciplinas</small>
+    </div>
+    <button class="btn-right d-flex align-items-center justify-content-center" routerLink="/cursos">
+      <mat-icon class="mat-18">arrow_back</mat-icon>
+      Voltar para lista
+    </button>
+  </div>
+  <div class="divider"></div>
+
+  <section class="mat-elevation-z8 mt-4 mb-5 my-2">
+    <form [formGroup]="form" (ngSubmit)="handleSubmitForm()">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Preencha todas as informações</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content class="mt-3">
+          <div class="row">
+            <div class="col-6">
+              <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Nome</mat-label>
+                <input
+                  matInput
+                  formControlName="name"
+                  placeholder="Informe o Nome da Disciplina"
+                />
+              </mat-form-field>
+            </div>
+
+            <div class="col-6">
+              <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Ementa</mat-label>
+                <input
+                  matInput
+                  formControlName="ementa"
+                  placeholder="Informe a Ementa da Disciplina"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+              <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Carga Horária</mat-label>
+                <input
+                  matInput
+                  formControlName="carga_horaria"
+                  placeholder="Informe a Carga Horária"
+                  type="number"
+                />
+              </mat-form-field>
+            </div>
+            <div class="col-6">
+              <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Nome do Professor</mat-label>
+                <input matInput formControlName="name_professor" placeholder="Informe o nome do professor" />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+              <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Semeste do Professor</mat-label>
+                <input matInput formControlName="semestre" placeholder="Informe o nome do professor" />
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-card-content>
+
+        <mat-card-actions class="d-flex justify-content-end m-1 gap-2">
+          <button
+            mat-retangle-button
+            type="button"
+            routerLink="/cursos"
+            class="btn btn-secondary d-flex justify-content-center align-items-center gap-1"
+          >
+            <mat-icon>arrow_left</mat-icon>
+            <span>Voltar</span>
+          </button>
+          <button
+            mat-retangle-button
+            type="submit"
+            class="btn btn-success d-flex justify-content-center align-items-center gap-2"
+          >
+            <mat-icon>save</mat-icon>
+            <span>Salvar</span>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+  </section>
+</div>
